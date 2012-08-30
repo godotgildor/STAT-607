@@ -23,4 +23,79 @@ options(replace.assign=TRUE,width=90)
 \title{Lecture Notes --- STAT 607}
 \maketitle
 \section*{Lecture 1}
+File: ch\_0\_SyllabusMS.pdf. General coverage of syllabus.\\[5pt]
+Send a picture, comment about why you are taking this class. Subject: 607 pic.
+In body, put name, where you are from, what you want to learn, why you are taking,
+trying to accomplish, etc.\\[5pt]
+\section*{ch1\_MS.pdf}
+\subsection*{Slide 2 --- Introduction (14:39)}
+Two ways to split the world of statistics: parametric \& 
+non-parametric.
+\begin{description}
+  \item[Parametric] You know (or assume) the distribution.  Example:
+  measuring heights, assume heights vary according to the normal 
+  distribution.  Once you know the mean and variance (the
+  parameters), you have completely described the (?)situation
+  \item[Non-parametric] Don't know shape, but want to do estimation
+  anyways
+\end{description}
+Can view populations as infinite or finite.  Basically, with
+replacement or not.
+\begin{description}
+  \item[Infinite] Draw observations from population, and every
+  draw is from the same population. Measuring height is example, 
+  where population is all humans, say, so after drawing one 
+  sample, the population hasn't been unduly affected; i.e.,
+  still drawing from the same distribution.
+  \item[Finite] If 10 in poulation, then after first sample you
+  have 9; i.e., next draw is from a ``diffferent'' population. This
+  is complicated, but honest.
+\end{description}
+This class explores finite populations, unlike most others. Finite
+populations imply non i.i.d.,since each draw changes the population
+we draw from (not identical).  Also usually non-parametric, don't
+know much about the population we are sampling from. The 
+height example follows the normal, but other measures like,
+income, do not. Randomization is used.\\[5pt]
+Complex sampling design: unemplyment in US example.  Problem: hard
+to sample from the entire US. So break up US into counties, 
+counties into districts, districts into nhoods.  Then sample
+people from nhoods (4 stage design).
+\subsection*{Slide 3 --- Basic Problem (28:00)}
+Estimate number of televisions in grad students houses at A\&M.
+How do you do this? (Choose design, create good questionaire)
+\begin{itemize}
+  \item Who are the grad students (frame)
+  \item How do you get the list, how do you ask the questions
+  \item Questions: hoiw many tv? What about number of peolpe in 
+  house?
+  \item Do you ask them all? Make inferences, use estimation. 
+  Also testing (hypotheses).
+\end{itemize}
+Who uses sampling? Government: measures about constituents. How many people are working. How much do people make. Manufacturing: defect
+rate. Business: marketing, polling. Polling (media) organzations:
+elections, (Roeper, Gallup, Rasmussen).\\[5pt]
+Discussion about how polling (the right) 1000 people is 
+sufficient for US polls.
+\subsection*{Slide 4 --- Steps of Survey (39:00)}
+\begin{itemize}
+  \item What is the goal (what are you trying to learn)
+  \item What is the population (what are, or define the objects 
+  you are trying to learn about)
+  \item What data do you collect (what do you ask)
+  \item What accuracy is desired (sample size; tv example: 3 $\pm$ 2
+  is not accurate enough)
+  \item How are you going to do it (visit face-to-face, telephone,
+  email)
+  \item[$\star$] Sampling frame: list of all the units in the population
+  that you want to know about. Implicitly defines goal.  Polling
+  example: list of people who vote (can't get it). Sampling unit:
+  what are you sampling from. Polling: human being, house. Farm:
+  enire farm, animals within, etc.
+  \item Pre-test (dry run)
+  \item[$\star$] Summarize, analysis
+  \item What went wrong
+\end{itemize}
+
+Focus of class: sample design and data collection (starred above)
 \end{document}

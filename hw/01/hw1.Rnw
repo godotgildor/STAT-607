@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage[unicode=true,pdfusetitle, bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2, breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false] {hyperref}
+\hypersetup{ pdfstartview={XYZ null null 1}}
+\usepackage{breakurl}
+\parindent = 0pt
+
+\title{Mike Lederle\\lederle@neo.tamu.edu\\STAT 607 --- HW 1}
+
+\begin{document}
+\maketitle
+\section*{Exercise 1.1}
+  % Target population = The complete collection of observations we want
+  %                     to observe.  
+  
+  % Sampling frame = The list of sampling units. 
+  
+  % Sampling unit = The unit we actually sample. (Households instead of people)
+  
+  % Observation unit = An object on which a measurement is taken
+  
+  % Selection bias = when some part of the target population is not in the 
+  %                  sampled population.
+  
+  % Measurement error =
+The article {\sl ``What Readers say About Marijuana''} reports that ``more
+than 75\% of the readers who took part in an informal PARADE telephone
+poll say marijuana should be as legal as alcoholic beverages.''  The 
+telephone poll was announced on page 5 of the June 12 issue; readers 
+were instructed to ``call 1-900-773-1200, at 75 cents a call, if you 
+would like to answer the following questions.  Use touch-tone phones only.
+To participate, call between 8 a.m. EDT on Saturday, June 11, and midnight
+EDT on Wednesday, June 15.''
+\subsection*{Answer}
+Target population is readers of Parade. The sampling frame is the list 
+of responders to the telephone survey.  The sampling unit and observation 
+unit is a person.  Selection bias occurs because of self-selection; the 
+responder is someone who wants to call and take the survey, which isn't
+necesarrily representative of reader of Parade.\\[20pt]
+
+\section*{Exercise 1.4}
+Potential jurors in some jurisdictions are chosen from a list of county 
+residents who are registered voters or licensed drivers over age 18.
+In the fourth quarter of 1994, there were 100,300 jury summons mailed
+to Maricopa County, Arizona residents. Approximately 23,000 of those
+were returned from the post office as undeliverable. Approximately 7,000
+persons were unqualified for service because they were not citizens, were
+uncer age 18, were convicted felons, or had other reasons that disqualified 
+them from serving on a jury. An additional 22,000 were excused from jury service
+because of illness, financial hardship, military service, or other acceptable
+reason. The final sample consists of persons who appear for jury duty; some
+unexcused jurors fail to appear.
+\subsection*{Answer}
+Target population is individuals qualified for jury service in Maricopa County.
+The sampling frame is the original list of 100,300 individuals. The sampling 
+unit and observation unit is a person. Selection bias occurs because many
+in the target population are unreachable or unresponsive.\\[20pt]
+
+\section*{Exercise 1.6}
+Approximately 16,500 women returned the Healthy Women Survey that appeared
+in the September 1992 issue of Prevention. The May 1993 issue, reporting
+on the survey, stated that ``ninety-two percent of our readers rated
+their health as excellent, very good or good.''
+\subsection*{Answer}
+The target population is the readers of Prevention magazine.  The target
+frame is the list of survey responders. The sampling 
+unit and observation unit is a person. Selection bias occurs because the
+responders volunteered to take the survey.\\[20pt]
+
+\section*{Exercise 1.7}
+A survey is conducted to find the average weight of cows in a region.
+A list of all farms is available for the region, and 50 farms are
+selected at random. Then the weight of each cow at the 50 selected
+farms is recorded.
+\subsection*{Answer}
+The target population is the cows in a region.  The sampling frame is the
+list of farms in the region.  The sampling unit is a farm.  The observation
+unit is a cow.  No selection bias or measurement bias appears from the
+given description.
+
+\end{document}

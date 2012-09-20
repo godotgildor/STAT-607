@@ -1,0 +1,115 @@
+\documentclass{article}\usepackage{graphicx, color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\definecolor{fgcolor}{rgb}{0.2, 0.2, 0.2}
+\newcommand{\hlnumber}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlfunctioncall}[1]{\textcolor[rgb]{0.501960784313725,0,0.329411764705882}{\textbf{#1}}}%
+\newcommand{\hlstring}[1]{\textcolor[rgb]{0.6,0.6,1}{#1}}%
+\newcommand{\hlkeyword}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlargument}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hlcomment}[1]{\textcolor[rgb]{0.180392156862745,0.6,0.341176470588235}{#1}}%
+\newcommand{\hlroxygencomment}[1]{\textcolor[rgb]{0.43921568627451,0.47843137254902,0.701960784313725}{#1}}%
+\newcommand{\hlformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hleqformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hlassignement}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlpackage}[1]{\textcolor[rgb]{0.588235294117647,0.709803921568627,0.145098039215686}{#1}}%
+\newcommand{\hlslot}[1]{\textit{#1}}%
+\newcommand{\hlsymbol}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlprompt}[1]{\textcolor[rgb]{0.2,0.2,0.2}{#1}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage[sc]{mathpazo}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage[unicode=true,pdfusetitle, bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2, breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false] {hyperref}
+\hypersetup{ pdfstartview={XYZ null null 1}}
+\usepackage{breakurl}
+\parindent = 0pt
+
+\usepackage{amsmath}
+\usepackage{framed, color}
+\definecolor{shadecolor}{RGB}{211, 211, 211}
+
+\title{Mike Lederle\\lederle@neo.tamu.edu\\STAT 607 --- HW 3}
+
+\begin{document}
+\maketitle
+\section*{Exercise 3.6}
+Suppose that a city has 90000 dwelling units, of which 35000 are houses, 45000 are apartments, and 10000 are condominiums.
+\begin{enumerate}
+  \item[{\bf a}] You believe that the mean electricity usage is about twice as much for houses as for apartments or condominiums, and that the standard deviation is proportional to the mean, so that $S_1 - 2S_2 = 3S_3.$ How would you allocate a stratified sample of 900 observations if you wanted to estimate the mean electricity consumption for all households in the city?
+  \item[{\bf b}] Now suppose that you take a stratified random sample with proportional allocation and want to estimate the overall proportion of households in which energy conservation is practiced. If 45\% of house dwellers, 25\% of apartment dwellers, and 3\% of condominium residents practice energy conservation, what is $p$ for the population? What gain would the stratified sample with proportional allocation offer over an SRS, that is, what is $V_{prop}(\hat{p}_{str}) / V_{SRS}(\hat{p}_{SRS})$?
+\end{enumerate}
+
+\section*{Exercise 3.11}
+Lydersen and Ryg (1991) used stratification techniques to estimate ringed seal populations in Svalbard fjords. The 200 km${}^2$ study area was divided into three zones: Zone 1, outer Sassenfjorden, was covered with relatively new ice during the study period in March 1990, and had little snow cover; Zone 3, Tempelfjorden, had a stable ice cover throughout the year; Zone 2, inner Sassenfjorden, was intermediate between the stable Zone 3 and the unstable Zone 1. Ringed seals need good ice to establish territories with breathing holes, and snow cover enables females to dig out birth lairs. Thus, it was thought that the three zones would have different seal densities. The investigators took a stratified random sample of 20\% of the 200 1-km${}^2$ areas. The following tables give the number of plots and the number of plots sampled, in each zone:\\[10pt]
+\begin{tabular}{ccc}
+Zone&Number of Plots& Plots Sampled\\
+\hline
+1&68&17\\
+2&84&12\\
+3&48&11\\
+\hline
+Total&200&40\\
+\end{tabular}\\[10pt]
+In each sampled area, Imjak the Siberian husky tracked seal structures by scent; the number of breathing holes in the sampled square was recorded. A total of 199 breathing holes were located in zones 1, 2, and 3 altogether. The data (reconstructed from information given in the paper) are in the file {\sl seals.dat}.
+\begin{enumerate}
+  \item[{\bf a}] Estimate the total number of breathing holes in the study region, along with its standard error.
+  \item[{\bf b}] If you were designing the surveym how would you allocate observations to strata if the goal is to estimate the total number of breathing holes? If the goal is to compute the density of breathing holes in the three zones?
+\end{enumerate}
+
+\section*{Exercise 3.15}
+Hayes (2000) took a stratified sample of New York City food stores. The sampling frame consisted of 1408 food stores with at least 4000 square feet of retail space. The population of stores was stratified into three strata using medianhoushold income within the zip code. The prices of a ``market basket'' of goods were determined for each store; the goal of the survey was to investigate whether prices differ among the three strata.  Hayes used the logarithm of total price for the basket as the response $y$. Results are given in the following table:\\[10pt]
+\begin{tabular}{lcccc}
+Stratum, $h$ & $N_h$ & $n_h$ & $\bar{y}_h$ & $s_h$ \\
+\hline
+{\bf 1} Low income & 190&21&3.925&0.037\\
+{\bf 2} Middle income & 407&14&3.938&0.052\\
+{\bf 3} High income & 811&22&3.942&0.070\\
+\end{tabular}\\[10pt]
+\begin{enumerate}
+  \item[{\bf a}] The planned sample size was 30 in each stratum; this was not achieved because some stores went out of business while the data were being collected. What are the advantages and disadvantages of sampling the same number of stores in  each stratum?
+  \item[{\bf b}] Estimate $\bar{y}_U$ for these data and give a 95\% CI.
+  \item[{\bf c}] Is there evidence that prices are different in the three strata?
+\end{enumerate}
+
+\end{document}

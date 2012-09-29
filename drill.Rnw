@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage[unicode=true,pdfusetitle, bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2, breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false] {hyperref}
+\hypersetup{ pdfstartview={XYZ null null 1}}
+\usepackage{breakurl}
+\parindent = 0pt
+
+\usepackage{amsmath}
+\usepackage{framed, color}
+\definecolor{shadecolor}{RGB}{211, 211, 211}
+
+\begin{document}
+<<setup, include=FALSE, cache=FALSE>>=
+# this is equivalent to \SweaveOpts{...}
+library(ggplot2)
+library(knitr)
+opts_chunk$set(fig.path='figure/', fig.align='center', fig.show='hold')
+options(replace.assign=TRUE,width=90)
+@
+\begin{shaded}
+MSE with Variance-Bias components
+$$
+\mathrm{MSE}[\hat{t}] = %E[(\hat{t} - t)^2] = E[(\hat)]
+               \mathrm{Var}[\hat{t}] + \mathrm{Bias}[\hat{t}]^2
+$$
+\end{shaded}
+\begin{shaded}
+For an SRS of size $n$  from a population of size $N$, the sample mean
+is an  unbiased estimator of the population mean; i.e.,
+$\mathrm{E}(\bar{y}) = \bar{y}_U$.
+\end{shaded}
+\begin{shaded}
+Under SRS,
+$$
+\mathrm{Var}(\bar{y}) = \frac{S^2}{n}\left(1 - \frac{n}{N}\right)
+$$
+where
+$$
+S^2 = \frac{1}{N-1} \sum_{i=1}^{N} (y_i - \bar{y}_U)^2
+$$
+\end{shaded}
+\end{document}

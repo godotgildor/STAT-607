@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage[unicode=true,pdfusetitle, bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2, breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false] {hyperref}
+\hypersetup{ pdfstartview={XYZ null null 1}}
+\usepackage{breakurl}
+\parindent = 0pt
+
+\usepackage{amsmath}
+\usepackage{framed, color}
+\definecolor{shadecolor}{RGB}{211, 211, 211}
+
+\title{Mike Lederle\\lederle@neo.tamu.edu\\STAT 607 --- HW 4}
+
+\begin{document}
+<<setup, include=FALSE, cache=FALSE>>=
+# this is equivalent to \SweaveOpts{...}
+library(ggplot2)
+library(knitr)
+opts_chunk$set(fig.path='figure/', fig.align='center', fig.show='hold')
+options(replace.assign=TRUE,width=90)
+@
+\maketitle
+\section*{Exercise 4.3}
+\subsection*{Exercise 4.3 (a)}
+<<out.width='.45\\textwidth'>>=
+diameter <- c(12, 11.4, 7.9, 9.0, 10.5, 7.9, 7.3, 10.2, 11.7, 11.3, 5.7, 8.0, 10.3, 12.0, 9.2, 8.5, 7.0, 10.7, 9.3, 8.2)
+age <- c(125, 119, 83, 85, 99, 117, 69, 133, 154, 168, 61, 80, 114, 147, 122, 106, 82, 88, 97, 99)
+trees <- data.frame(diameter, age)
+qplot(diameter, age, trees)
+@
+
+\subsection*{Exercise 4.3 (b)}
+<<>>=
+x.bar.U <- 10.3
+N <- 1132
+(n <- nrow(trees))
+(x.bar <- mean(diameter))
+(y.bar <- mean(age))
+(B.hat <- y.bar/x.bar)
+y.bar.hat.ratio <- B.hat * x.bar.U
+paste("ESTIMATOR OF POP MEAN VIA RATIO ====", y.bar.hat.ratio)
+(fpc <- 1 - n/N)
+(term2 <- (x.bar.U/x.bar)^2)
+.resid <- function(x, y) {
+  y.bar <- mean(y)
+  x.bar <- mean(x)
+  y - y.bar/x.bar * x
+}
+variance.resid <- function(r) {
+  sum(r^2)/(length(r) - 1)
+}
+(term3 <- variance.resid(.resid(diameter, age))/n)
+SE.y.bar.hat.ratio <- sqrt(fpc * term2 * term3)
+paste("STD ERR OF POP MEAN USING RATIO ====", SE.y.bar.hat.ratio)
+@
+
+\subsection*{Exercise 4.3 (c)}
+<<>>=
+simple.reg <- function(x, y) {
+  B.1.hat <- cor(x, y) * sd(y) / sd(x)
+  B.0.hat  <- mean(y) - B.1.hat * mean(x)
+  list(B.0.hat, B.1.hat)
+}
+(trees.coef <- unlist(simple.reg(diameter, age)))
+y.bar.hat.reg <- trees.coef[1] + trees.coef[2] * x.bar.U
+paste("ESTIMATOR OF POP MEAN VIA REGRESSION ====", y.bar.hat.reg)
+se.reg <- function(x, y, N) {
+  fpc <- 1 - length(x)/N
+  sqrt(fpc * 1/n * var(y) * (1 - cor(x, y)^2))
+}
+paste("STD ERR OF POP MEAN USING REGRESSION ====", se.reg(diameter, age, N))
+@
+
+\subsection*{Exercise 4.3 (d)}
+<<out.width='.85\\textwidth'>>=
+p <- qplot(diameter, age, trees)
+p + geom_abline(intercept = 0, slope = B.hat) + geom_abline(intercept = trees.coef[1], slope = trees.coef[2], color = "red") + geom_hline(yintercept = y.bar.hat.ratio) + geom_hline(yintercept = y.bar.hat.reg, color = "red")
+@
+Seem pretty close to me.  Regression estimate has lower SE.
+\vfil
+\newpage
+\section*{Exercise 4.8}
+\subsection*{Exercise 4.8 (a)}
+<<out.width='.45\\textwidth'>>=
+agsrs <- read.csv("~/Courses/STAT 607/STAT-607/data/Dataset/agsrs.csv")
+qplot(farms87, data = agsrs)
+qplot(farms87, farms92, data = agsrs)
+@
+\subsection*{Exercise 4.8 (b)}
+<<>>=
+t.x <- 2087759
+n <- 300
+N <- 3078
+(x.bar <- mean(agsrs$farms87))
+(y.bar <- mean(agsrs$farms92))
+(B.hat <- y.bar/x.bar)
+t.hat.y.ratio <- B.hat * t.x
+paste("ESTIMATOR OF POP MEAN VIA RATIO ====", t.hat.y.ratio)
+@
+\subsection*{Exercise 4.8 (c)}
+<<>>=
+(farms.coef <- with(agsrs, simple.reg(farms87, farms92)))
+(y.bar.hat.reg <- farms.coef[[1]] + farms.coef[[2]] * t.x / N)
+(t.hat.y.regression <- y.bar.hat.reg * N)
+@
+
+\end{document}
